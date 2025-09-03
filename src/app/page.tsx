@@ -2,8 +2,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div>
-      ROOT
+    <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <a href="/keyboard">Go to Keyboard</a>
     </div>
   );

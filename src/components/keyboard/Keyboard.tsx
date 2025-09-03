@@ -1,4 +1,5 @@
 import { KeyboardButton } from "../keyboard-button/KeyboardButton";
+import { TextArea } from "../text-area/TextArea";
 
 const keys = [
   ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', 'Å'],
@@ -18,6 +19,9 @@ export const Keyboard = () => {
       ))}
       <div className="flex gap-2">
         <KeyboardButton keyId="SPACE" />
+      </div>
+      <div className="pt-4 w-1/2">
+        <TextArea />
       </div>
     </div>
   );
