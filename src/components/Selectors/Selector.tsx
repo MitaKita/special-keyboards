@@ -1,15 +1,14 @@
 'use client';
-import { NameParamMapper, Outsider } from "@/constants/language";
+import { NameParamMapper } from "@/constants/language";
 import { useRouter, usePathname } from "next/navigation";
 import React, { useState, useRef, useEffect } from "react";
 
 interface SelectorProps {
   name: string;
   categories: NameParamMapper[];
-  outsiders?: Outsider | Outsider[]
 }
 
-export const Selector = ({ name, categories, outsiders }: SelectorProps) => {
+export const Selector = ({ name, categories }: SelectorProps) => {
   const router = useRouter();
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
