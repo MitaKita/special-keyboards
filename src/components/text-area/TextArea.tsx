@@ -1,6 +1,5 @@
 'use client'
 
-import { BACKSPACE_KEY } from "@/constants/keys";
 import type { RootState } from "@/store";
 import { addCharacter, removeCharacter } from "@/store/slices/typedTextSlice";
 import { useDispatch } from "react-redux";
@@ -21,14 +20,9 @@ export const TextArea = () => {
     }
   }
 
-  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    
-  }
-
   return (
     <textarea
-      onChange={handleChange}
-      // readOnly
+      onChange={() => {}}
       onKeyDown={handleKeyDown}
       value={typedText}
       className="border-2 border-gray-300 p-2 rounded-md w-full h-32"
