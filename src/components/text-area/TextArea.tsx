@@ -1,6 +1,5 @@
 'use client'
 
-import { BACKSPACE_KEY } from "@/constants/keys";
 import type { RootState } from "@/store";
 import { addCharacter, removeCharacter } from "@/store/slices/typedTextSlice";
 import { useDispatch } from "react-redux";
@@ -21,7 +20,7 @@ export const TextArea = () => {
     }
   }
 
-  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const handleChange = (_: React.ChangeEvent<HTMLTextAreaElement>) => {
     
   }
 

@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import GraphemeSplitter from "grapheme-splitter";
+import { store } from "..";
 
 const splitter = new GraphemeSplitter();
 
@@ -52,3 +53,4 @@ const typedTextSlice = createSlice({
 export const { addCharacter, removeCharacter, resetText, shift } =
   typedTextSlice.actions;
 export const typedTextReducer = typedTextSlice.reducer;
+export type RootState = ReturnType<typeof store.getState>;
