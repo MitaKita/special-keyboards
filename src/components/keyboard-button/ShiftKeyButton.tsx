@@ -1,10 +1,11 @@
+import { RootState } from "@/store";
 import { shift } from "@/store/slices/typedTextSlice";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 
 export const ShiftKeyButton = () => {
   const dispatch = useDispatch();
-  const isUpperCase = useSelector((state: any) => state.typedText.isUpperCase);
+  const isUpperCase = useSelector((state: RootState) => state.typedText.isUpperCase);
 
   const handleShift = () => {
     dispatch(shift(!isUpperCase));

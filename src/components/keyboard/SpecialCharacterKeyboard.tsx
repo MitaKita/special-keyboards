@@ -1,5 +1,4 @@
 import { InputKeyButton } from "../keyboard-button/InputKeyButton";
-import { TextArea } from "../text-area/TextArea";
 import { getSpecialLanguageKeys } from "@/constants/language";
 
 interface KeyboardProps {

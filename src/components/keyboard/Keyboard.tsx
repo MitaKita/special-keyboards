@@ -1,12 +1,7 @@
 import { ENGLISH_KEYBOARD_KEYS } from "@/constants/keys";
 import { InputKeyButton } from "../keyboard-button/InputKeyButton";
 import { TextArea } from "../text-area/TextArea";
-
-const keys = [
-  ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', 'Å'],
-  ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'Ö', 'Ä'],
-  ['Z', 'X', 'C', 'V', 'B', 'N', 'M']
-];
+import React from "react";
 
 interface KeyboardProps {
   keys?: string[][];

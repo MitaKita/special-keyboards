@@ -1,5 +1,4 @@
 import React from "react";
-import { generateKeyboardSVG } from "@/utils/svgKeyboardGenerator";
 
 interface SvgComponentProps {
   svgMarkup: string

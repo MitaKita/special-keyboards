@@ -20,14 +20,9 @@ export const TextArea = () => {
     }
   }
 
-  const handleChange = (_: React.ChangeEvent<HTMLTextAreaElement>) => {
-    
-  }
-
   return (
     <textarea
-      onChange={handleChange}
-      // readOnly
+      onChange={() => {}}
       onKeyDown={handleKeyDown}
       value={typedText}
       className="border-2 border-gray-300 p-2 rounded-md w-full h-32"
