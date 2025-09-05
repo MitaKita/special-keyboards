@@ -9,8 +9,8 @@ export default function Home() {
       <h1 className="text-4xl font-bold text-cyan-800 pt-20">This is a work in progress</h1>
       <p className="mt-3 text-lg w-1/2">
         I sometimes struggle to find the special characters I need on my keyboard.
-        That's what inspired me. The idea was to create an online keyboard that contains
-        only these characters I'm looking for. I decided to build a simple web app,
+        That&apos;s what inspired me. The idea was to create an online keyboard that contains
+        only these characters I&apos;m looking for. I decided to build a simple web app,
         while playing around with Next.js. And as I developed, it grew and grew...
         So now it contains several different keyboards with special characters for various languages
         and purposes.
