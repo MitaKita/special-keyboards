@@ -126,7 +126,6 @@ export const getLanguageKeys = (param: string) => {
     case Activities_param:
       return getActivityEmojis();
     case Greek_param:
-      // Greek characters are handled separately
       return getGreekKeys();
     default:
       return [[]];

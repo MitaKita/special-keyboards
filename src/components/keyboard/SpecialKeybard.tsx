@@ -17,7 +17,6 @@ export const SpecialKeyboard = () => {
   return (<>
     <h2 className="text-2xl font-bold text-cyan-800 text-center pb-4 pt-20">{params.type} Characters</h2>
     <div className="flex flex-col gap-2 items-center">
-      {hasShift(params.type as string) && <ShiftKeyButton />}
       <div className="flex flex-col gap-2 items-center">
         {keys.map((row, rowIdx) => (
           <div key={rowIdx} className="flex gap-2">
