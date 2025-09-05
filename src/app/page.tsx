@@ -2,16 +2,11 @@ import { EmojiKeyboardSVG } from "@/components/svg-components/EmojiKeyboardSvg";
 import { GreekKeyboardSVG } from "@/components/svg-components/GreekKeyboadSvg";
 import { MathKeyboardSVG } from "@/components/svg-components/MathKeyboardSvg";
 import { Faces_param, Greek_param, Maths_param } from "@/constants/language";
-import Image from "next/image";
-import React from "react";
 
 export default function Home() {
   return (
     <div className="flex flex-col items-center min-h-screen py-2">
       <h1 className="text-4xl font-bold text-cyan-800 pt-20">This is a work in progress</h1>
-      <h2 className="text-1xl font-bold text-cyan-800">
-        And... it will probably be a work in progress for quite some time. 😊
-      </h2>
       <p className="mt-3 text-lg w-1/2">
         I sometimes struggle to find the special characters I need on my keyboard.
         That's what inspired me. The idea was to create an online keyboard that contains
@@ -29,7 +24,6 @@ export default function Home() {
           <h2 className="text-2xl font-semibold text-cyan-800 mt-4 text-center">Math Keyboard</h2>
         </a>
         <a href={`/keyboard/${Greek_param}`} className="border border-cyan-800 rounded-lg p-4 hover:shadow-lg transition-shadow">
-          {/* <Image src="/greek_keyboard.png" alt="Greek Keyboard" width={300} height={150} className="mx-auto" /> */}
           <GreekKeyboardSVG />
           <h2 className="text-2xl font-semibold text-cyan-800 mt-4 text-center">Greek Keyboard</h2>
         </a>
