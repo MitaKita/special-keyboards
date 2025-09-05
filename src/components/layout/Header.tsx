@@ -1,5 +1,7 @@
 import Link from "next/link";
-import { LanguageSelector } from "../language-selector/LanguageSelector";
+import { Maths_param } from "@/constants/language";
+import { LanguageSelector } from "../Selectors/LanguageSelector";
+import { EmojiSelector } from "../Selectors/EmojiSelector";
 
 const Header = () => {
   const linkClass = 'text-white hover:text-yellow-300 transition-colors'
@@ -18,12 +20,20 @@ const Header = () => {
             >English Keyboard</Link>
           </li>
           <li>
-            <Link href="/special/"
+            <Link href="/special-latin/"
               className={linkClass}
-            >All Special Characters</Link>
+            >Special Latin Characters</Link>
+          </li>
+          <li>
+            <Link href={`/keyboard/${Maths_param}`}
+              className={linkClass}
+            >Math Keyboard</Link>
           </li>
           <li>
             <LanguageSelector />
+          </li>
+          <li>
+            <EmojiSelector />
           </li>
         </ul>
       </nav>

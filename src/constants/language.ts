@@ -1,3 +1,4 @@
+import { get } from "http";
 import {
   czechSlovakLowerSpecialCharacters,
   czechSlovakUpperSpecialCharacters,
@@ -21,6 +22,16 @@ import {
   turkishLowerSpecialCharacters,
   turkishUpperSpecialCharacters,
 } from "./specialLatinCharacters";
+import { specialMathCharacters } from "./specialMathCharacters";
+import {
+  activityEmojis,
+  animalEmojis,
+  faceEmojis,
+  foodEmojis,
+  heartEmojis,
+  natureEmojis,
+} from "./emojiCharacters";
+import { greekCharacters } from "./greekCharacters";
 
 export const Nordic_param = "Nordic";
 export const German_param = "German";
@@ -33,7 +44,23 @@ export const Czech_param = "Czech";
 export const Hungarian_param = "Hungarian";
 export const Turkish_param = "Turkish";
 
-export const languages = [
+export const Maths_param = "Maths";
+
+export const Hearts_param = "Hearts";
+export const Faces_param = "Faces";
+export const Nature_param = "Nature";
+export const Animals_param = "Animals";
+export const Food_param = "Food";
+export const Activities_param = "Activities";
+
+export const Greek_param = "Greek";
+
+export interface NameParamMapper {
+  name: string;
+  param: string;
+}
+
+export const languages: NameParamMapper[] = [
   { name: "Nordic", param: Nordic_param },
   { name: "German", param: German_param },
   { name: "French", param: French_param },
@@ -44,6 +71,16 @@ export const languages = [
   { name: "Czech", param: Czech_param },
   { name: "Hungarian", param: Hungarian_param },
   { name: "Turkish", param: Turkish_param },
+  { name: "Greek", param: Greek_param },
+];
+
+export const emojiCategories: NameParamMapper[] = [
+  { name: "Hearts", param: Hearts_param },
+  { name: "Faces", param: Faces_param },
+  { name: "Nature", param: Nature_param },
+  { name: "Animals", param: Animals_param },
+  { name: "Food", param: Food_param },
+  { name: "Activities", param: Activities_param },
 ];
 
 export const getLanguageKeys = (param: string) => {
@@ -74,23 +111,80 @@ export const getLanguageKeys = (param: string) => {
       return [hungarianLowerSpecialCharacters, hungarianUpperSpecialCharacters];
     case Turkish_param:
       return [turkishLowerSpecialCharacters, turkishUpperSpecialCharacters];
+    case Maths_param:
+      return getMathsKeys();
+    case Hearts_param:
+      return getHeartEmojis();
+    case Faces_param:
+      return getFaceEmojis();
+    case Nature_param:
+      return getNatureEmojis();
+    case Animals_param:
+      return getAnimalEmojis();
+    case Food_param:
+      return getFoodEmojis();
+    case Activities_param:
+      return getActivityEmojis();
+    case Greek_param:
+      // Greek characters are handled separately
+      return getGreekKeys();
     default:
       return [[]];
   }
 };
 
-export const getSpecialLanguageKeys = () => {
-  const charsSet = new Set(specialLatinCharacters);
+export const splitKeysIntoRows = (charIds: string[], rowSize: number) => {
+  const charsSet = new Set(charIds);
   let chars = Array.from(charsSet);
   const keys = [];
   while (chars.length) {
-    if (chars.length >= 20) {
-      keys.push(chars.slice(0, 20));
-      chars = chars.slice(20);
+    if (chars.length >= rowSize) {
+      keys.push(chars.slice(0, rowSize));
+      chars = chars.slice(rowSize);
     } else {
       keys.push(chars);
       chars = [];
     }
   }
   return keys;
+};
+
+export const getSpecialLanguageKeys = () => {
+  return splitKeysIntoRows(specialLatinCharacters, 20);
+};
+
+export const getMathsKeys = () => {
+  return splitKeysIntoRows(specialMathCharacters, 20);
+};
+
+export const getGreekKeys = () => {
+  return splitKeysIntoRows(greekCharacters, 20);
+};
+
+export const getEmojiKeys = (categories: string[]) => {
+  return splitKeysIntoRows(categories, 10);
+};
+
+export const getHeartEmojis = () => {
+  return getEmojiKeys(heartEmojis);
+};
+
+export const getFaceEmojis = () => {
+  return getEmojiKeys(faceEmojis);
+};
+
+export const getNatureEmojis = () => {
+  return getEmojiKeys(natureEmojis);
+};
+
+export const getAnimalEmojis = () => {
+  return getEmojiKeys(animalEmojis);
+};
+
+export const getFoodEmojis = () => {
+  return getEmojiKeys(foodEmojis);
+};
+
+export const getActivityEmojis = () => {
+  return getEmojiKeys(activityEmojis);
 };
