@@ -14,8 +14,8 @@ const getWidth = (keyId: string) => {
 }
 
 const basicButtonClasses = [
-  'h-12', 'border-solid', 'border-1', 'border-gray-400', 'w-12', 'h-12', 'bg-gray-200', 'rounded-md', 'text-lg',
-  'font-semibold', 'shadow-md', 'hover:bg-gray-300', 'active:bg-gray-400', 'transition']
+  'h-12', 'border-solid', 'border-1', 'border-gray-400', 'dark:border-gray-600', 'w-12', 'h-12', 'bg-gray-200', 'dark:bg-gray-700', 'rounded-md', 'text-lg',
+  'font-semibold', 'shadow-md', 'hover:bg-gray-300', 'dark:hover:bg-gray-600', 'active:bg-gray-400', 'dark:active:bg-gray-600', 'transition']
 
 export const InputKeyButton = ({ keyId }: { keyId: string }) => {
   const dispatch = useDispatch()
