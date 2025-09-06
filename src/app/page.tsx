@@ -4,10 +4,11 @@ import { MathKeyboardSVG } from "@/components/svg-components/MathKeyboardSvg";
 import { Faces_param, Greek_param, Maths_param } from "@/constants/language";
 
 export default function Home() {
+  const pClasses = 'mt-3 text-lg w-full md:w-2/3';
   return (
     <div className="flex flex-col items-center min-h-screen py-2">
       <h1 className="text-4xl font-bold text-cyan-800 pt-20">This is a work in progress</h1>
-      <p className="mt-3 text-lg w-1/2">
+      <p className={pClasses}>
         I sometimes struggle to find the special characters I need on my keyboard.
         That&apos;s what inspired me. The idea was to create an online keyboard that contains
         only these characters I&apos;m looking for. I decided to build a simple web app,
@@ -15,7 +16,7 @@ export default function Home() {
         So now it contains several different keyboards with special characters for various languages
         and purposes.
       </p>
-      <p className="mt-3 text-lg w-1/2">
+      <p className={pClasses}>
         Check out some of the keyboards:
       </p>
       <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6 w-3/4">
@@ -32,7 +33,7 @@ export default function Home() {
           <h2 className="text-2xl font-semibold text-cyan-800 mt-4 text-center">Emoji Keyboard</h2>
         </a>
       </div>
-      <p className="mt-3 text-lg w-1/2">
+      <p className={pClasses}>
         This project is open source and available on <a href="https://github.com/MitaKita/special-keyboards" className="text-cyan-800 hover:underline" target="_blank" rel="noopener noreferrer">GitHub</a> .
       </p>
     </div>
