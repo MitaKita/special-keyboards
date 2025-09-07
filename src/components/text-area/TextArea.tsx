@@ -4,6 +4,7 @@ import type { RootState } from "@/store";
 import { addCharacter, removeCharacter } from "@/store/slices/typedTextSlice";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
+import { ResetButton } from "../keyboard-button/ResetButton";
 
 export const TextArea = () => {
   const typedText = useSelector((state: RootState) => state.typedText.text);
@@ -20,13 +21,15 @@ export const TextArea = () => {
     }
   }
 
-  return (
+  return <div className="relative w-full">
     <textarea
       onChange={() => {}}
       onKeyDown={handleKeyDown}
       value={typedText}
-      className="border-2 border-gray-300 p-2 rounded-md w-full h-32"
+      className="border-2 border-gray-300 p-2 rounded-md w-full h-32 pr-5"
       placeholder="Type your text here..."
     />
-  );
+    { /** Reset text area button */}
+    {typedText && <ResetButton />}
+  </div>
 };
