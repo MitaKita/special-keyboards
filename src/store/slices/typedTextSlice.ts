@@ -41,10 +41,6 @@ const typedTextSlice = createSlice({
       state.text = "";
     },
     shift: (state, action: PayloadAction<boolean>) => {
-      // If true, set to uppercase; if false, set to lowercase
-      state.text = action.payload
-        ? state.text.toUpperCase()
-        : state.text.toLowerCase();
       state.isUpperCase = action.payload;
     },
   },

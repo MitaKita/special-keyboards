@@ -1,6 +1,5 @@
 import { ResetButton } from "@/components/keyboard-button/ResetButton";
 import { OnScreenKeyboard } from "@/components/keyboard/OnScreenKeyboard";
-import { SpecialKeyboard } from "@/components/keyboard/SpecialKeybard";
 import { TextArea } from "@/components/text-area/TextArea";
 
 const DynamicKeyboard = () => {

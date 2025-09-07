@@ -91,6 +91,13 @@ export const emojiCategories: NameParamMapper[] = [
   { name: "Activities", param: Activities_param },
 ];
 
+export const getTitleByType = (type: string) => {
+  if (type === Greek_param) {
+    return "Greek Letters";
+  }
+  return `${type} Special Characters`;
+};
+
 export const getLanguageByType = (type: string): string[] => {
   switch (type) {
     case Nordic_param:
