@@ -1,22 +1,30 @@
-import { get } from "http";
 import {
   czechSlovakLowerSpecialCharacters,
+  czechSlovakSpecialCharacters,
   czechSlovakUpperSpecialCharacters,
   frenchLowerSpecialCharacters,
+  frenchSpecialCharacters,
   frenchUpperSpecialCharacters,
   germanLowerSpecialCharacters,
+  germanSpecialCharacters,
   germanUpperSpecialCharacters,
   hungarianLowerSpecialCharacters,
+  hungarianSpecialCharacters,
   hungarianUpperSpecialCharacters,
   italianLowerSpecialCharacters,
+  italianSpecialCharacters,
   italianUpperSpecialCharacters,
   nordicLowerSpecialCharacters,
+  nordicSpecialCharacters,
   nordicUpperSpecialCharacters,
   polishLowerSpecialCharacters,
+  polishSpecialCharacters,
   polishUpperSpecialCharacters,
   portugueseLowerSpecialCharacters,
+  portugueseSpecialCharacters,
   portugueseUpperSpecialCharacters,
   spanishLowerSpecialCharacters,
+  spanishSpecialCharacters,
   spanishUpperSpecialCharacters,
   specialLatinCharacters,
   turkishLowerSpecialCharacters,
@@ -83,6 +91,56 @@ export const emojiCategories: NameParamMapper[] = [
   { name: "Activities", param: Activities_param },
 ];
 
+export const getTitleByType = (type: string) => {
+  if (type === Greek_param) {
+    return "Greek Letters";
+  }
+  return `${type} Special Characters`;
+};
+
+export const getLanguageByType = (type: string): string[] => {
+  switch (type) {
+    case Nordic_param:
+      return nordicSpecialCharacters;
+    case German_param:
+      return germanSpecialCharacters;
+    case French_param:
+      return frenchSpecialCharacters;
+    case Italian_param:
+      return italianSpecialCharacters;
+    case Spanish_param:
+      return spanishSpecialCharacters;
+    case Portuguese_param:
+      return portugueseSpecialCharacters;
+    case Polish_param:
+      return polishSpecialCharacters;
+    case Czech_param:
+      return czechSlovakSpecialCharacters;
+    case Hungarian_param:
+      return hungarianSpecialCharacters;
+    case Turkish_param:
+      return turkishLowerSpecialCharacters;
+    case Maths_param:
+      return specialMathCharacters;
+    case Hearts_param:
+      return heartEmojis;
+    case Faces_param:
+      return faceEmojis;
+    case Nature_param:
+      return natureEmojis;
+    case Animals_param:
+      return animalEmojis;
+    case Food_param:
+      return foodEmojis;
+    case Activities_param:
+      return activityEmojis;
+    case Greek_param:
+      return greekCharacters;
+    default:
+      return [];
+  }
+};
+
 export const getLanguageKeys = (param: string) => {
   switch (param) {
     case Nordic_param:
@@ -126,7 +184,6 @@ export const getLanguageKeys = (param: string) => {
     case Activities_param:
       return getActivityEmojis();
     case Greek_param:
-      // Greek characters are handled separately
       return getGreekKeys();
     default:
       return [[]];

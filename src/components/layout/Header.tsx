@@ -15,16 +15,6 @@ const Header = () => {
             >Home</Link>
           </li>
           <li>
-            <Link href="/keyboard"
-              className={linkClass}
-            >English Keyboard</Link>
-          </li>
-          <li>
-            <Link href="/special-latin/"
-              className={linkClass}
-            >Special Latin Characters</Link>
-          </li>
-          <li>
             <Link href={`/keyboard/${Maths_param}`}
               className={linkClass}
             >Math Keyboard</Link>

@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import GraphemeSplitter from "grapheme-splitter";
+import { store } from "..";
 
 const splitter = new GraphemeSplitter();
 
@@ -40,10 +41,6 @@ const typedTextSlice = createSlice({
       state.text = "";
     },
     shift: (state, action: PayloadAction<boolean>) => {
-      // If true, set to uppercase; if false, set to lowercase
-      state.text = action.payload
-        ? state.text.toUpperCase()
-        : state.text.toLowerCase();
       state.isUpperCase = action.payload;
     },
   },
@@ -52,3 +49,4 @@ const typedTextSlice = createSlice({
 export const { addCharacter, removeCharacter, resetText, shift } =
   typedTextSlice.actions;
 export const typedTextReducer = typedTextSlice.reducer;
+export type RootState = ReturnType<typeof store.getState>;
