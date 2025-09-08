@@ -22,15 +22,15 @@ export default function Home() {
       <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6 w-3/4">
         <a href={`/keyboard/${Maths_param}`} className="border border-cyan-800 rounded-lg p-4 hover:shadow-lg transition-shadow">
           <MathKeyboardSVG />
-          <h2 className="text-2xl font-semibold text-cyan-800 mt-4 text-center">Math Keyboard</h2>
+          <h2 className="text-2xl font-semibold text-cyan-800 mt-4 text-center">Math Symbols</h2>
         </a>
         <a href={`/keyboard/${Greek_param}`} className="border border-cyan-800 rounded-lg p-4 hover:shadow-lg transition-shadow">
           <GreekKeyboardSVG />
-          <h2 className="text-2xl font-semibold text-cyan-800 mt-4 text-center">Greek Keyboard</h2>
+          <h2 className="text-2xl font-semibold text-cyan-800 mt-4 text-center">Greek Letters</h2>
         </a>
         <a href={`/keyboard/${Faces_param}`} className="border border-cyan-800 rounded-lg p-4 hover:shadow-lg transition-shadow">
           <EmojiKeyboardSVG />
-          <h2 className="text-2xl font-semibold text-cyan-800 mt-4 text-center">Emoji Keyboard</h2>
+          <h2 className="text-2xl font-semibold text-cyan-800 mt-4 text-center">Emojis</h2>
         </a>
       </div>
       <p className={pClasses}>
