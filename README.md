@@ -1,4 +1,4 @@
-The application is deployed to this URL: [https://special-keyboards.vercel.app/](https://special-keyboards.vercel.app/)
+The application is deployed to this URL: <a href="https://special-keyboards.vercel.app/" target="__blank">https://special-keyboards.vercel.app/</a>
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
